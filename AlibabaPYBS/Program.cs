@@ -1,3 +1,6 @@
+using AlibabaPBYS.DataAccessLayer;
+using Microsoft.EntityFrameworkCore;
+
 namespace AlibabaPYBS
 {
     public class Program
@@ -8,6 +11,10 @@ namespace AlibabaPYBS
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<ApplicationDBContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("connectionString"));
+            });
 
             var app = builder.Build();
 
