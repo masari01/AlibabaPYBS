@@ -72,8 +72,7 @@ namespace AlibabaPBYS.DataAccessLayer.Migrations
                         name: "FK_Cars_CarModels_CarModelId",
                         column: x => x.CarModelId,
                         principalTable: "CarModels",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(

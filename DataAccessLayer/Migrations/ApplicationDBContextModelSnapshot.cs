@@ -115,7 +115,7 @@ namespace AlibabaPBYS.DataAccessLayer.Migrations
                     b.HasOne("AlibabaPBYS.Core.Entities.CarModel", "CarModel")
                         .WithMany("Cars")
                         .HasForeignKey("CarModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Brand");

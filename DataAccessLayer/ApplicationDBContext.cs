@@ -17,8 +17,7 @@ public class ApplicationDBContext : DbContext
         modelBuilder.Entity<Car>()
             .HasOne(x => x.CarModel)
             .WithMany(x => x.Cars)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.NoAction);
         base.OnModelCreating(modelBuilder);
     }
-
 }

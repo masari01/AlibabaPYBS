@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AlibabaPBYS.DataAccessLayer.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20230713184349_1")]
+    [Migration("20230713185801_1")]
     partial class _1
     {
         /// <inheritdoc />
@@ -118,7 +118,7 @@ namespace AlibabaPBYS.DataAccessLayer.Migrations
                     b.HasOne("AlibabaPBYS.Core.Entities.CarModel", "CarModel")
                         .WithMany("Cars")
                         .HasForeignKey("CarModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Brand");
