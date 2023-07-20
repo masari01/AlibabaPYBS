@@ -1,5 +1,8 @@
+using AlibabaPBYS.Core.Interfaces.Repository;
 using AlibabaPBYS.DataAccessLayer;
+using AlibabaPBYS.DataAccessLayer.Repository;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace AlibabaPYBS
 {
@@ -15,6 +18,11 @@ namespace AlibabaPYBS
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("connectionString"));
             });
+
+            builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            builder.Services.AddScoped<ICarRepository, CarRepository>();
+            builder.Services.AddScoped<IBrandRepository, BrandRepository>();
+            builder.Services.AddScoped<ICarModelRepository, CarModelRepository>();
 
             var app = builder.Build();
 

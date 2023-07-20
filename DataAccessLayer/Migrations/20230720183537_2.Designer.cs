@@ -4,6 +4,7 @@ using AlibabaPBYS.DataAccessLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AlibabaPBYS.DataAccessLayer.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230720183537_2")]
+    partial class _2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -92,56 +95,6 @@ namespace AlibabaPBYS.DataAccessLayer.Migrations
                     b.HasIndex("CarModelId");
 
                     b.ToTable("Cars");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            BrandId = 1,
-                            CarModelId = 1,
-                            CarType = "Otomobil",
-                            ExaminationDate = new DateTime(2023, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExaminationDuration = 2,
-                            IsExaminated = false,
-                            NextExaminationDate = new DateTime(2025, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Plate = "01ABS01"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            BrandId = 1,
-                            CarModelId = 2,
-                            CarType = "Otomobil",
-                            ExaminationDate = new DateTime(2023, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExaminationDuration = 2,
-                            IsExaminated = false,
-                            NextExaminationDate = new DateTime(2025, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Plate = "01ABS01"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            BrandId = 2,
-                            CarModelId = 3,
-                            CarType = "Otomobil",
-                            ExaminationDate = new DateTime(2023, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExaminationDuration = 2,
-                            IsExaminated = false,
-                            NextExaminationDate = new DateTime(2025, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Plate = "01ABS01"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            BrandId = 2,
-                            CarModelId = 4,
-                            CarType = "Otomobil",
-                            ExaminationDate = new DateTime(2023, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExaminationDuration = 2,
-                            IsExaminated = false,
-                            NextExaminationDate = new DateTime(2025, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Plate = "01ABS01"
-                        });
                 });
 
             modelBuilder.Entity("AlibabaPBYS.Core.Entities.CarModel", b =>
