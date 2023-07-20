@@ -1,4 +1,6 @@
+using AlibabaPBYS.BusinessLayer.Services;
 using AlibabaPBYS.Core.Interfaces.Repository;
+using AlibabaPBYS.Core.Interfaces.Services;
 using AlibabaPBYS.DataAccessLayer;
 using AlibabaPBYS.DataAccessLayer.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +25,10 @@ namespace AlibabaPYBS
             builder.Services.AddScoped<ICarRepository, CarRepository>();
             builder.Services.AddScoped<IBrandRepository, BrandRepository>();
             builder.Services.AddScoped<ICarModelRepository, CarModelRepository>();
+
+            builder.Services.AddScoped<ICarService, CarService>();
+            builder.Services.AddScoped<IBrandService, BrandService>();
+            builder.Services.AddScoped<ICarModelService, CarModelService>();
 
             var app = builder.Build();
 
