@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BusinessLayer\AlibabaPBYS.BusinessLayer.csproj" />
+    <ProjectReference Include="..\Core\AlibabaPBYS.Core.csproj" />
     <ProjectReference Include="..\DataAccessLayer\AlibabaPBYS.DataAccessLayer.csproj" />
   </ItemGroup>
 

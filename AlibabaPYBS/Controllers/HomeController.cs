@@ -1,4 +1,5 @@
-﻿using AlibabaPYBS.Models;
+﻿using AlibabaPBYS.Core.Interfaces.Services;
+using AlibabaPYBS.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,15 +8,18 @@ namespace AlibabaPYBS.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ICarService _carService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ICarService carService)
         {
             _logger = logger;
+            _carService = carService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var cars = await _carService.GetAllCars();
+            return View(cars);
         }
 
         public IActionResult Privacy()

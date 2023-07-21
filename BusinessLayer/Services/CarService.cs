@@ -28,9 +28,10 @@ public class CarService : ICarService
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<CarViewModel>> GetAllCars()
+    public async Task<IEnumerable<CarViewModel>> GetAllCars()
     {
-        throw new NotImplementedException();
+        var cars = await _carRepository.GetAllAsync();
+        return _mapper.Map<IEnumerable<CarViewModel>>(cars);
     }
 
     public Task<CarViewModel> GetCarById(int Id)
